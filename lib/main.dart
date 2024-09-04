@@ -35,11 +35,40 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
-        backgroundColor: Colors.blue,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "This ",
+              style: TextStyle(fontSize: 20),
+            ),
+            SizedBox(
+              width: 30,
+            ),
+            Text(
+              "This is second text This is second text",
+              style: TextStyle(fontSize: 20),
+            ),
+            SizedBox(height: 40,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+              Icon(Icons.thumb_up),
+              Icon(Icons.comment),
+              Icon(Icons.comment),
+
+              Icon(Icons.share),
+            ],)
+          ],
+        ),
+        // backgroundColor: Colors.blue,
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.yellow,
-          onPressed: (){},
-          child: Icon(Icons.add,color: Colors.blue,),
+          onPressed: () {},
+          child: Icon(
+            Icons.add,
+            color: Colors.blue,
+          ),
         ),
       ),
     );
