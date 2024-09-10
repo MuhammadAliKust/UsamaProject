@@ -11,13 +11,18 @@ class ImageViewDemo extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Image.network(
-            "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
-          ),
-          SizedBox(
-            height: 30,
-          ),
-          Image.asset('assets/images/1.png')
+          // Image.network(
+          //   "https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg",
+          // ),
+          // SizedBox(
+          //   height: 30,
+          // ),
+          Image.asset(
+            'assets/images/2.jpg',
+            height: 100,
+            fit: BoxFit.cover,
+            width: MediaQuery.of(context).size.width,
+          )
         ],
       ),
     );
