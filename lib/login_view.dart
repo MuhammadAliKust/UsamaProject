@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({super.key});
@@ -16,6 +17,7 @@ class LoginView extends StatelessWidget {
         children: [
           TextFormField(
             controller: emailController,
+            keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
               label: Text("Email"),
               hintText: 'test@gmail.com',
@@ -25,9 +27,24 @@ class LoginView extends StatelessWidget {
           ),
           TextFormField(
             controller: pwdController,
+            obscureText: true,
             decoration: InputDecoration(
               label: Text("Password"),
+
               hintText: 'Password must be 6 or more characters.',
+              prefixIcon: Icon(Icons.lock),
+              suffixIcon: Icon(Icons.visibility),
+            ),
+          ),
+          TextFormField(
+            controller: pwdController,
+            // keyboardType: TextInputType.number,
+            inputFormatters: [
+              FilteringTextInputFormatter.digitsOnly
+            ],
+            decoration: InputDecoration(
+              label: Text("Phone Number"),
+              hintText: '',
               prefixIcon: Icon(Icons.lock),
               suffixIcon: Icon(Icons.visibility),
             ),
@@ -48,8 +65,8 @@ class LoginView extends StatelessWidget {
                   return;
                 }
                 if (pwdController.text.length < 6) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text("Password must be 6 or more characters.")));
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: Text("Password must be 6 or more characters.")));
                   return;
                 }
               },

@@ -20,12 +20,7 @@ class _ListViewDemoState extends State<ListViewDemo> {
           itemCount: 5,
           itemBuilder: (context, i) {
             return ListTile(
-              onTap: (){
-                // selectedIndex = i;
-                // setState(() {
-                //
-                // });
-              },
+
               leading: Icon(Icons.notifications),
               title: Text("Notification Title $selectedIndex"),
               subtitle: Text("Notification Sub Title"),
