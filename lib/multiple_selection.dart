@@ -1,34 +1,39 @@
 import 'package:flutter/material.dart';
 
-class ListViewDemo extends StatefulWidget {
-  ListViewDemo({super.key});
+class MultipleListViewDemo extends StatefulWidget {
+  MultipleListViewDemo({super.key});
 
   @override
-  State<ListViewDemo> createState() => _ListViewDemoState();
+  State<MultipleListViewDemo> createState() => _MultipleListViewDemoState();
 }
 
-class _ListViewDemoState extends State<ListViewDemo> {
-  int selectedIndex = -1;
+class _MultipleListViewDemoState extends State<MultipleListViewDemo> {
+  List<int> selectedIndex = [];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("List View Demo"),
+        title: Text("Multiple List View Demo"),
       ),
       body: ListView.builder(
           itemCount: 5,
           itemBuilder: (context, i) {
             return ListTile(
               onTap: () {
-                selectedIndex = i;
+                if (selectedIndex.contains(i)) {
+                  selectedIndex.remove(i);
+                } else {
+                  selectedIndex.add(i);
+                }
+
                 setState(() {});
               },
               leading: Icon(Icons.notifications),
               title: Text("Select Index : $selectedIndex"),
               subtitle: Text("Index : $i"),
               trailing: Icon(Icons.arrow_forward_ios),
-              tileColor: selectedIndex == i ? Colors.blue : Colors.white,
+              tileColor: selectedIndex.contains(i) ? Colors.blue : Colors.white,
             );
           }),
     );
