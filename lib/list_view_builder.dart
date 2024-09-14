@@ -8,7 +8,7 @@ class ListViewDemo extends StatefulWidget {
 }
 
 class _ListViewDemoState extends State<ListViewDemo> {
-  int selectedIndex = -1;
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
