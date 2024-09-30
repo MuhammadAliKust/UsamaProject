@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:usama_project/login_view.dart';
 
 class DialogBoxView extends StatelessWidget {
   const DialogBoxView({super.key});
@@ -12,18 +13,24 @@ class DialogBoxView extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            showDialog(context: context, builder: (context){
-              return AlertDialog(
-                title: Text("Message!"),
-                content: Text("This is first dialog"),
-                actions: [
-                  TextButton(onPressed: (){}, child: Text("Yes")),
-                  TextButton(onPressed: (){
-                    Navigator.pop(context);
-                  }, child: Text("No")),
-                ],
-              );
-            });
+            showDialog(
+                context: context,
+                builder: (context) {
+                  return AlertDialog(
+                    title: Text("Message!"),
+                    content: Text("This is first dialog"),
+                    actions: [
+                      TextButton(onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginView()));
+                      }, child: Text("Yes")),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text("No")),
+                    ],
+                  );
+                });
           },
           child: Text("Show Dialog Box"),
         ),
