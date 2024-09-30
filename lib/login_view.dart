@@ -54,6 +54,8 @@ class LoginView extends StatelessWidget {
           ),
           ElevatedButton(
               onPressed: () {
+                Navigator.pop(context);
+                return;
                 if (emailController.text.isEmpty) {
                   ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(content: Text("Email cannot be empty.")));

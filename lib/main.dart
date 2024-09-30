@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:usama_project/bottom_bar.dart';
+import 'package:usama_project/dialog_box.dart';
 import 'package:usama_project/dynamic_list_view.dart';
 import 'package:usama_project/gride_view_builder.dart';
 import 'package:usama_project/list_view_builder.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: TabbarViewDemo(),
+      home: DialogBoxView(),
     );
   }
 }
