@@ -5,6 +5,7 @@ import 'package:usama_project/gride_view_builder.dart';
 import 'package:usama_project/list_view_builder.dart';
 import 'package:usama_project/multiple_selection.dart';
 import 'package:usama_project/page_view_demo.dart';
+import 'package:usama_project/tabbar_view.dart';
 
 import 'login_view.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: BottomBarView(),
+      home: TabbarViewDemo(),
     );
   }
 }
